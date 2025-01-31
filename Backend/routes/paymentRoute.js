@@ -27,8 +27,14 @@ router.post("/checkout", async (req, res) => {
         };
       }),
 
-      success_url: `${process.env.CLIENT_URL}/success/${_orderId}`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel`,
+      success_url:
+        process.env.NODE_ENV === "development"
+          ? `${process.env.CLIENT_URL}/success/${_orderId}`
+          : `/success/${_orderId}`,
+      cancel_url:
+        process.env.NODE_ENV === "development"
+          ? `${process.env.CLIENT_URL}/cancel`
+          : `/cancel`,
     });
     res.json({ url: session.url });
   } catch (e) {
