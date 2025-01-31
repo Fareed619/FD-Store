@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BASE_URL } from "../../redux/constants";
 import { TfiShoppingCart } from "react-icons/tfi";
 import { addToCart } from "../../redux/features/cartSlice";
 import { useDispatch } from "react-redux";
@@ -18,7 +17,7 @@ const ProductShop = ({ productInfo }) => {
 
   return (
     <ProductShopWrapper>
-      <img src={`${BASE_URL}${productInfo.image}`} alt="" />
+      <img src={`${productInfo.image}`} alt="" />
       <p>{productInfo.description}</p>
 
       <div className="productshop-shop-details">
