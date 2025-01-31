@@ -34,7 +34,7 @@ const ProductCarousel = () => {
         {topProducts?.products?.map((p) => (
           <div key={p._id}>
             <img
-              src={`${BASE_URL}${p.image}`}
+              src={`${p.image}`}
               alt=""
               style={{
                 width: "100%",
