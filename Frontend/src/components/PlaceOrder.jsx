@@ -7,7 +7,6 @@ import Loader from "./Loader";
 import { clearCartItmes } from "../redux/features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useCreateOrderMutation } from "../redux/api/admin/orderApiSlice";
-import { BASE_URL } from "../redux/constants";
 import { devices } from "../../utils/styledConstants";
 
 const PlaceOrder = () => {
@@ -65,7 +64,7 @@ const PlaceOrder = () => {
                 {cart.cartItems.map((item, index) => (
                   <tr key={index}>
                     <td className="td-image">
-                      <img src={`${BASE_URL}${item.image}`} alt="" />
+                      <img src={`${item.image}`} alt="" />
                     </td>
                     <td>
                       <Link

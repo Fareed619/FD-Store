@@ -4,7 +4,6 @@ import {
   useGetProductByIdQuery,
 } from "../redux/api/admin/productsApiSlice";
 import Loader from "../components/Loader";
-import { BASE_URL } from "../redux/constants";
 import styled from "styled-components";
 import Favorite from "./Favorite";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
@@ -68,7 +67,7 @@ const ProductDetailes = () => {
       </h3>
       <section className="product-detailes-top">
         <div className="product-detailes-left">
-          <img src={`${BASE_URL}${product.image}`} alt="" />
+          <img src={`${product.image}`} alt="" />
         </div>
         <div className="product-detailes-right">
           <h3>{product.name}</h3>

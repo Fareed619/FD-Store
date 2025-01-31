@@ -1,6 +1,5 @@
 import Slider from "react-slick";
 import { useGetTopProductsQuery } from "../redux/api/admin/productsApiSlice";
-import { BASE_URL } from "../redux/constants";
 import { styled } from "styled-components";
 // React-icons
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
@@ -34,7 +33,7 @@ const ProductCarousel = () => {
         {topProducts?.products?.map((p) => (
           <div key={p._id}>
             <img
-              src={`${BASE_URL}${p.image}`}
+              src={`${p.image}`}
               alt=""
               style={{
                 width: "100%",

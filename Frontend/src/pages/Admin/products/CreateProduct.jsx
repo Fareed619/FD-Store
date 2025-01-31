@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { AdminWrappr } from "../admin.style";
-import { BASE_URL } from "../../../redux/constants";
 import { useState } from "react";
 import { useGetAllCategoriesQuery } from "../../../redux/api/admin/categoriesApiSlice";
 import {
@@ -172,7 +171,7 @@ const CreateProduct = () => {
         <div className="image-div">
           <label htmlFor="image-field" className="image-label">
             Upload Image
-            {image && <img src={`${BASE_URL}${image}`} />}
+            {image && <img src={`${image}`} />}
           </label>
 
           <input

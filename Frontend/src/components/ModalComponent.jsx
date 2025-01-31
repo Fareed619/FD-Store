@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import Loader from "./Loader.jsx";
 import { devices } from "../../utils/styledConstants.js";
 
 const ModalComponent = ({

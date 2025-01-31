@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import Favorite from "./Favorite";
-import { BASE_URL } from "../redux/constants";
 import { devices } from "../../utils/styledConstants";
 import { useNavigate } from "react-router-dom";
 const ProductCard = ({ productInfo }) => {
@@ -9,7 +8,7 @@ const ProductCard = ({ productInfo }) => {
   return (
     <ProductWrapper>
       <div className="product-card-div">
-        <img src={`${BASE_URL}${productInfo?.image}`} alt="" />
+        <img src={`${productInfo?.image}`} alt="" />
 
         <p>{productInfo?.description}</p>
         <div className="product-card-div-bottom">

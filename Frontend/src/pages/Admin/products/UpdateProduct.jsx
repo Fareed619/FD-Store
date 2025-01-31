@@ -10,7 +10,6 @@ import AdminTopComponent from "../AdminTopComponent";
 import { ProductForm } from "./CreateProduct";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { BASE_URL } from "../../../redux/constants";
 import { useGetAllCategoriesQuery } from "../../../redux/api/admin/categoriesApiSlice";
 import Loader from "../../../components/Loader";
 
@@ -200,7 +199,7 @@ const UpdateProduct = () => {
         <div className="image-div">
           <label htmlFor="image-field" className="image-label">
             Upload Image
-            {image && <img src={`${BASE_URL}${image}`} />}
+            {image && <img src={`${image}`} />}
           </label>
 
           <input

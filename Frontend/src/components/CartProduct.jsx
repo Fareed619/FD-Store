@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { FaTrash } from "react-icons/fa";
-import { BASE_URL } from "../redux/constants";
 import { styled } from "styled-components";
 import { devices } from "../../utils/styledConstants";
 
@@ -8,7 +7,7 @@ const CartProduct = ({ item, addToCartHandler, removeFromCartHandler }) => {
   return (
     <CartWrapper key={item._id}>
       <div className="cartproduct-content-left">
-        <img src={`${BASE_URL}${item.image}`} alt="" />
+        <img src={`${item.image}`} alt="" />
         <div>
           <p>{item.name}</p>
           <h4>{item.brand}</h4>

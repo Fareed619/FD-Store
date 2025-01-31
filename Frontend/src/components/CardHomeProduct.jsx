@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-import { BASE_URL } from "../redux/constants";
 import Favorite from "./Favorite";
 import { useNavigate } from "react-router-dom";
 import { devices } from "../../utils/styledConstants";
@@ -9,7 +8,7 @@ const CardHomeProduct = ({ productInfo }) => {
   const navigate = useNavigate();
   return (
     <ProductCardWrapper>
-      <img src={`${BASE_URL}${productInfo.image}`} alt="" />
+      <img src={`${productInfo.image}`} alt="" />
       <div className="cardhome-content">
         <p className="cardhome-description"> {productInfo.description}</p>
         <div>

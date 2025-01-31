@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { BASE_URL } from "../redux/constants";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { devices } from "../../utils/styledConstants";
@@ -10,7 +9,7 @@ const DisplayProduct = ({ product }) => {
   return (
     <DisplayProductWrapper>
       <div className="display-product-img-div">
-        <img src={`${BASE_URL}${product.image}`} alt="" />
+        <img src={`${product.image}`} alt="" />
       </div>
       <div className="display-product-details">
         <h3>{product.name}</h3>
