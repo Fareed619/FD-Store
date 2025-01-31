@@ -27,8 +27,8 @@ router.post("/checkout", async (req, res) => {
         };
       }),
 
-      success_url: `${process.env.CLIENT_URL}/success/${_orderId}`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel`,
+      success_url: `/success/${_orderId}`,
+      cancel_url: `/cancel`,
     });
     res.json({ url: session.url });
   } catch (e) {
