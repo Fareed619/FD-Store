@@ -1,0 +1,11 @@
+.register-para {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+@media (max-width: 400px) {
+  .register-para,
+  .reg-label {
+    font-size: 15px;
+  }
+}
