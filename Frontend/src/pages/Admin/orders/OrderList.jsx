@@ -3,7 +3,6 @@ import Loader from "../../../components/Loader";
 import AdminTopComponents from "../AdminTopComponent";
 import { styled } from "styled-components";
 import { AdminWrappr } from "../admin.style";
-import { BASE_URL } from "../../../redux/constants";
 import { Link } from "react-router-dom";
 import { devices } from "../../../../utils/styledConstants";
 import { useEffect } from "react";
@@ -42,7 +41,7 @@ const OrderList = () => {
             <>
               <tr key={order._id}>
                 <td>
-                  <img src={`${BASE_URL}${order.orderItems[0].image}`} alt="" />
+                  <img src={`${order.orderItems[0].image}`} alt="" />
                 </td>
 
                 <td data-att="ID">{order._id}</td>
