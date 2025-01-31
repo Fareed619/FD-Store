@@ -1,5 +1,5 @@
 export const BASE_URL =
-  import.meta.env.MODE === "development" ? "http://localhost:4000" : "";
+  import.meta.env.MODE === "development" ? "http://localhost:4000" : "/";
 export const AUTH = "/api/auth";
 export const USERS = "/api/users";
 export const PROFILES = "/api/profiles";
