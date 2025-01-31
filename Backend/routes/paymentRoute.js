@@ -30,11 +30,11 @@ router.post("/checkout", async (req, res) => {
       success_url:
         process.env.NODE_ENV === "development"
           ? `${process.env.CLIENT_URL}/success/${_orderId}`
-          : `/success/${_orderId}`,
+          : `https://fd-store.onrender.com/success/${_orderId}`,
       cancel_url:
         process.env.NODE_ENV === "development"
           ? `${process.env.CLIENT_URL}/cancel`
-          : `/cancel`,
+          : `https://fd-store.onrender.com/cancel`,
     });
     res.json({ url: session.url });
   } catch (e) {
