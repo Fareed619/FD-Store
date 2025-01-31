@@ -2,7 +2,6 @@ import Loader from "../../components/Loader";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { useGetMyOrdersQuery } from "../../redux/api/admin/orderApiSlice";
-import { BASE_URL } from "../../redux/constants";
 import { devices } from "../../../utils/styledConstants";
 import { OrderListTable } from "../Admin/orders/OrderList";
 
@@ -33,10 +32,7 @@ const UserOrders = () => {
               <>
                 <tr key={order._id}>
                   <td>
-                    <img
-                      src={`${BASE_URL}${order.orderItems[0].image}`}
-                      alt=""
-                    />
+                    <img src={`${order.orderItems[0].image}`} alt="" />
                   </td>
 
                   <td data-att="ID">{order._id}</td>
@@ -73,7 +69,6 @@ const UserOrders = () => {
             ))}
           </tbody>
         </OrderListTable>
-       
       )}
     </UserOrdersWrapper>
   );
@@ -88,22 +83,21 @@ export const UserOrdersWrapper = styled.div`
   padding-top: 1.5rem;
   position: relative;
   margin-bottom: 2rem;
-  h2{
+  h2 {
     margin-left: 1rem;
   }
 
   @media ${devices.lg} {
     width: 90%;
-    margin-top:1rem;
-    h2{
-      margin-left:2.4rem;
+    margin-top: 1rem;
+    h2 {
+      margin-left: 2.4rem;
     }
   }
 
-  @media ${devices.md}{
-    h2{
-      margin-left:1rem;
+  @media ${devices.md} {
+    h2 {
+      margin-left: 1rem;
     }
   }
- 
 `;

@@ -13,7 +13,6 @@ import {
 } from "../../redux/api/admin/orderApiSlice";
 import { useEffect } from "react";
 import { usePayByStripeMutation } from "../../redux/api/admin/stripeApiSlice";
-import { BASE_URL } from "../../redux/constants";
 import { loadStripe } from "@stripe/stripe-js";
 
 const Order = () => {
@@ -100,7 +99,7 @@ const Order = () => {
               {order.orderItems.map((item, index) => (
                 <tr key={index}>
                   <td>
-                    <img src={`${BASE_URL}${item.image}`} />
+                    <img src={`${item.image}`} />
                   </td>
                   <td>{item.name}</td>
                   <td>{item.qty}</td>
