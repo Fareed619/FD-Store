@@ -23,6 +23,7 @@ const Home = () => {
       </div>
     );
   }
+  console.log(BASE_URL)
   return (
     <HomeDiv>
       <section className="sec-top-left">
