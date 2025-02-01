@@ -42,9 +42,11 @@ const Success = () => {
         fontSize: "20px",
       }}
     >
-      <h2>Thank you for you trust with us </h2>
+      <h2>Thank you for your trust. </h2>
 
-      <Link to={`/order/${orderId}`}>Go Back</Link>
+      <Link to={`/order/${orderId}`} style={{ color: "white" }}>
+        Go Back
+      </Link>
     </div>
   );
 };
