@@ -6,7 +6,8 @@
     "server": "nodemon index.js",
     "start": "node index.js",
     "frontend": "npm run dev --prefix ../Frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"  "
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"  ",
+    "build": "npm install"
   },
   "author": "",
   "license": "ISC",
