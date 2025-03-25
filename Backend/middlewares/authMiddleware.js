@@ -4,6 +4,9 @@ import "dotenv/config";
 
 export const auth = async (req, res, next) => {
   const token = req.cookies.jwt;
+  if (!token)
+    return res.status(404).json({ message: "Token must be provided" });
+
   const decoded = jwt.verify(token, process.env.JWT_KEY);
   if (!decoded) {
     return res.status(404).json({ message: "Invalid token, Not Authorized" });

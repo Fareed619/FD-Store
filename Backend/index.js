@@ -10,13 +10,21 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const CLIENT_URL = process.env.CLIENT_URL;
 
-const origins = [CLIENT_URL, "http://localhost:5137"];
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"]
 app.use(
   cors({
-    origin: origins,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
@@ -24,6 +32,9 @@ app.use(
 //  App Routes
 app.use(All_Routes);
 
+app.get('/', (req, res) => {
+  res.status(200).json({message: "You Got it "})
+})
 // upload image folder
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
