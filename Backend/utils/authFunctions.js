@@ -17,7 +17,7 @@ export const generateToken = (userInfo, res) => {
     maxAge: 30 * 24 * 60 * 60 * 1000, //30 days
     secure: process.env.NODE_ENV === "production",
     sameSite: "None",
-    expires: 30 * 24 * 60 * 60 * 1000,
+    expires:  new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
   });
 
   return token;
