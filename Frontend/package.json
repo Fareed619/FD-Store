@@ -14,6 +14,7 @@
     "@stripe/react-stripe-js": "^3.1.1",
     "@stripe/stripe-js": "^5.4.0",
     "apexcharts": "^4.3.0",
+    "cloudinary": "^2.6.0",
     "fd-store": "file:..",
     "moment": "^2.30.1",
     "react": "^18.3.1",

@@ -2,10 +2,7 @@ import styled from "styled-components";
 import { AdminWrappr } from "../admin.style";
 import { useState } from "react";
 import { useGetAllCategoriesQuery } from "../../../redux/api/admin/categoriesApiSlice";
-import {
-  useAddProductMutation,
-  useUploadImageMutation,
-} from "../../../redux/api/admin/productsApiSlice";
+import { useAddProductMutation } from "../../../redux/api/admin/productsApiSlice";
 import Loader from "../../../components/Loader";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -23,12 +20,13 @@ const CreateProduct = () => {
     quantity: "",
   });
   const [image, setImage] = useState("");
+  const [imgLoading, setImgLoading] = useState(false);
   const { name, description, brand, price, countInStock, category, quantity } =
     productForm;
   const navigate = useNavigate();
-  const [upload, { isLoading: loadingImg }] = useUploadImageMutation();
   const [createProduct] = useAddProductMutation();
 
+  console.log(image);
   // Create Product
   const createProductHandler = async (e) => {
     e.preventDefault();
@@ -54,20 +52,29 @@ const CreateProduct = () => {
       toast.error(error.message);
     }
   };
+  
   // Upload Imag to server
   const uploadImg = async (imgFile) => {
     const formData = new FormData();
-    formData.append("image", imgFile);
+    formData.append("file", imgFile);
+    formData.append("upload_preset", "FD-Store react");
 
     try {
-      const res = await upload(formData).unwrap();
-      if (res.error) {
-        throw new Error(res.error);
-      }
-      setImage(res.image);
-      toast.success("imgae uploaded");
+      setImgLoading(true);
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dpdv7p57h/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      const data = await res.json();
+      toast.success("Image uploaded successfully");
+      setImage(data.secure_url);
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setImgLoading(false);
     }
   };
 
@@ -170,8 +177,8 @@ const CreateProduct = () => {
 
         <div className="image-div">
           <label htmlFor="image-field" className="image-label">
-            Upload Image
-            {image && <img src={`${image}`} />}
+            {imgLoading ? "uploading...." : "Upload Image"}
+            {image && <img src={image} />}
           </label>
 
           <input
