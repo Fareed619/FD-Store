@@ -26,6 +26,9 @@ app.use(
 //  App Routes
 app.use(All_Routes);
 
+app.get("/", (req, res) => {
+  res.send("Hello to our api ✔️✔️👋👋👋")
+})
 
 // upload image folder
 const __dirname = path.resolve();
