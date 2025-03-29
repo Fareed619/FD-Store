@@ -15,7 +15,7 @@ export const generateToken = (userInfo, res) => {
   res.cookie("jwt", token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000, //30 days
-    secure: process.env.NODE_ENV === "production",
+    secure: true, // process.env.NODE_ENV === "production"
     sameSite: "None", // Required for cross-site cookies
     domain: process.env.NODE_ENV === "production" && ".fd-store-api.onrender", // Adjust based on your backend domain
     path: "/", // Cookie available for all routes on the backend
