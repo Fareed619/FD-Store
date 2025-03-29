@@ -3,15 +3,14 @@ import styled from "styled-components";
 import Favorite from "./Favorite";
 import { useNavigate } from "react-router-dom";
 import { devices } from "../../utils/styledConstants";
-import { BASE_URL } from "../redux/constants";
 
 const CardHomeProduct = ({ productInfo }) => {
   const navigate = useNavigate();
   return (
     <ProductCardWrapper>
-      <img src={`${BASE_URL}${productInfo.image}`} alt="" />
+      <img src={`${productInfo.image}`} alt="" />
       <div className="cardhome-content">
-        <p className="cardhome-description"> {productInfo.description}</p>
+        <p className="cardhome-description"> {productInfo.description.slice(0, 50)}...</p>
         <div>
           <button
             onClick={() => {

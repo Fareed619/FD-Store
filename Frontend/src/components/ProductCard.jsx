@@ -10,7 +10,7 @@ const ProductCard = ({ productInfo }) => {
       <div className="product-card-div">
         <img src={`${productInfo?.image}`} alt="" />
 
-        <p>{productInfo?.description}</p>
+        <p>{productInfo?.description.slice(0, 50)}...</p>
         <div className="product-card-div-bottom">
           <button
             onClick={() => {

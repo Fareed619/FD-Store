@@ -15,9 +15,11 @@ export const generateToken = (userInfo, res) => {
   res.cookie("jwt", token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000, //30 days
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "None",
-    expires:  new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+    secure: process.env.NODE_ENV === "development",
+    sameSite: "Strict", // Required for cross-site cookies
+    domain: process.env.NODE_ENV === "production" && ".fd-store-api.onrender", // Adjust based on your backend domain
+    path: "/", // Cookie available for all routes on the backend
+    expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // Expiry as Date object
   });
 
   return token;

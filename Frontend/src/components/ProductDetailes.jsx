@@ -72,9 +72,7 @@ const ProductDetailes = () => {
         <div className="product-detailes-right">
           <h3>{product.name}</h3>
           <p className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-            exercitationem dolore earum, voluptatibus quo qui modi ipsam sequi
-            voluptatem voluptatum?
+            {product.description}
           </p>
           <h2>$ {product.price}</h2>
           <div className="product-detailes-right-moredetailes">

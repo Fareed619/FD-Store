@@ -47,7 +47,7 @@ const ProductCarousel = () => {
               <div className="carousel-part1">
                 <h3>{p.name}</h3>
                 <p>$ {p.price}</p>
-                <p>{p.description}</p>
+                <p>{p.description.slice(0, 50)}...</p>
               </div>
               <div className="carousel-part2">
                 <p>

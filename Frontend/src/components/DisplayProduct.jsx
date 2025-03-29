@@ -13,7 +13,7 @@ const DisplayProduct = ({ product }) => {
       </div>
       <div className="display-product-details">
         <h3>{product.name}</h3>
-        <p>{product.description}</p>
+        <p>{product.description.slice(0, 50)}...</p>
         <div className="diplay-product-details-div">
           <button
             onClick={() => navigate(`/admin/updateProduct/${product._id}`)}
