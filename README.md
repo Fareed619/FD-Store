@@ -1,1 +1,1 @@
-![My Image]([https://your-image-url.com/image.png](https://res.cloudinary.com/dpdv7p57h/image/upload/v1745436018/Screenshot_2025-04-23_221752_rs8v3z.png))
+![My Image](Screenshot 2025-04-23 221752.png)
